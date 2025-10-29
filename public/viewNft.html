@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Nft</title>
+    <link rel="stylesheet" href="./viewNft.css">
+    <link href="https://fonts.cdnfonts.com/css/being-human" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/favicon_io/site.webmanifest">
+</head>
+<body>
+
+    <nav>
+        <i id="back-btn" class="fa-solid fa-angle-left"></i>
+        <p>Buy This NFT</p>
+        <i class="fa-solid fa-ellipsis-vertical"></i>
+    </nav>
+
+    <main>
+        <img id="nft-img" class="nft-img" src="" alt="">
+        <span>    
+            <p id="ai-shortDesc" class="ai-shortDesc"></p>
+            <i class="fa-solid fa-heart"></i>
+        </span>
+
+        <div>
+            <p id="nft-name" class="nft-name">Azuki #0</p>
+            <p id="nft-value" class="nft-value"></p>
+        </div>
+
+        <p id="ai-longDesc" class="ai-longDesc"></p>
+        <hr>
+        <button id="buy-btn">Buy NFT</button>
+    </main>
+
+   
+    
+
+    <script defer src="./viewNft.js"></script>
+
+    </body>
+</html>
+
+
+<!-- 
+    const prompt = `
+    You are a creative NFT curator and critic.
+    NFT name: "${name}"
+    Description: "${description || "No extra details"}"
+
+    Follow these rules strictly:
+    1. Respond in pure JSON only (no markdown, no code block).
+    2. The "shortDesc" must be **max 8 words**, one artistic tagline or name that sounds mysterious or cool.
+    3. The "longDesc" must be **max 40 words**, descriptive but stylish, like a short gallery caption,  DO NOT START WITH THE 'Name', always start with a capital letter.
+    4. "shouldIBuy" must be only **2-3 words** and include an emoji.
+
+    Format:
+    {
+    "shortDesc": "max 8 words only, artistic line",
+    "longDesc": "max 40 words, creative and elegant tone",
+    "shouldIBuy": "2-3 words with emoji"
+    }`
+-->

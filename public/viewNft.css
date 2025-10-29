@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #fbf8f2;
+    font-family: sans-serif;
+}
+
+nav, span{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:2em 1em;
+}
+nav i{
+    font-size: 1.5rem;
+}
+.nft-img{
+    width: 90%;
+    display: block;
+    margin: auto;
+}
+
+.ai-shortDesc{
+    width: 75%;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+.fa-heart{
+    color: red;
+    font-size: 1.5rem;
+}
+.nft-name{
+    font-weight: bold;
+    margin: 1em;
+}
+div{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.nft-value{
+    border: 1px solid black;
+    background-color: #ede9ff;
+    font-weight: bold;
+    padding: 0.6em;
+    border-radius: 0.3em;
+}
+.ai-longDesc{
+    margin: 1em;
+    opacity: 50%;
+    line-height: 1.5;
+}
+hr{
+    opacity: 20%;
+    margin: 1em;
+}
+button{
+    display: block;
+    margin:1em auto;
+    width: 90%;
+    height: 50px;
+    border-radius: 5em;
+    border: none;
+    background-color: #141414;
+    color: #fbf8f2;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.svg{
+    color: red;
+    filter: drop-shadow(10px);
+}

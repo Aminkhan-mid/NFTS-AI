@@ -2,6 +2,7 @@ import { userDetails } from "./login.js"
 const homeContainer = document.getElementById('home-container')
 const navPfp = document.getElementById("nav-pfp") 
 const userName = document.getElementById("user-name")
+const svgSpinner =  document.getElementById('svg-spinner')
 
 
 
@@ -18,8 +19,7 @@ async function loadNFT() {
     document.body.innerHTML = `<h2>Server error</h2>`
     return
   }
-  homeContainer.innerHTML = data
-  .map((nft) => 
+  homeContainer.innerHTML = data.map((nft) => 
     `
   <div class="nft-container">
     <img class="nft-img" src="${nft.imageURL}" alt="${data.name}">
@@ -43,6 +43,36 @@ async function loadNFT() {
     </div>
   </div>
   `).join("")
+
+  document.querySelectorAll(".view-nftBtn").forEach((btn, i) => {
+    btn.addEventListener("click", async () => {
+      console.log(`🟣 Fetching AI description for: ${data[i].name}`)
+
+      const aiData = await getNFTDescription(data[i])
+
+      // Save NFT + AI data for next page
+      localStorage.setItem("selectedNFT", JSON.stringify(data[i]))
+      localStorage.setItem("aiData", JSON.stringify(aiData))
+
+      // Go to view page
+      window.location.href = "./viewNft.html"
+    })
+  })
+}
+async function getNFTDescription(nft) {
+   svgSpinner.innerHTML = `<div class="svg-spinners--gooey-balls-2"></div>`
+    const res = await fetch("/api/nft/describe", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: nft.name,
+        description: nft.attributes?.map(a => `${a.trait_type}: ${a.value}`).join(", ")
+      })
+    })
+
+    const data = await res.json()
+    console.log("🧠 AI Response:", data)
+    return data
 }
 
 loadNFT()
