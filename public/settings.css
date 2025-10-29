@@ -28,14 +28,12 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: skyblue;
+    background-color: #F4B32C;
     padding: 1em;
 }
 .profile-pfp{
-    border: 1px solid black;
     width: 120px;
     border-radius: 50%;
-    background-color:lavenderblush;
 }
 .userName-p{
     font-size: 0.9rem;
@@ -63,12 +61,30 @@ nav p{
     border: 1px solid navy;
 }
 
+.likes-container{
+    border: 1px solid navy;
+    width: 90%;
+    height: 60px;
+    margin: 1em auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lavender;
+    cursor: pointer;
+}
+.yourLikes-btn{
+    text-decoration: underline;
+    border: none;
+    background: transparent;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
 .yourDetail-p{
-    background-color: antiquewhite;
+
     padding: 0.3em;
     width: fit-content;
     font-size: 1.5rem;
-    border: 1px solid black;
 }
 .yourDetail{
     font-weight: bold;
@@ -90,21 +106,3 @@ nav p{
     background-color: rgb(216, 54, 36);
 }
 
-
-.likes-container{
-    border: 1px solid navy;
-    width: 90%;
-    height: 60px;
-    margin: 1em auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: lavender;
-    cursor: pointer;
-}
-.yourLikes-btn{
-    border: none;
-    background: transparent;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
