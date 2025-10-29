@@ -29,8 +29,8 @@ nav{
 }
 .nft-container{
     box-shadow: 0px 0px 2px black;
-    padding: 0.5em;
-    margin: 1em 0.5em;
+    padding:1em 0.5em;
+    margin:1em;
 }
 .nft-img{
     border:1px solid black;
@@ -49,6 +49,9 @@ nav{
     text-align: left;
     font-family: sans-serif;
     font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .nft-name-type p{
     width: fit-content;
@@ -83,14 +86,6 @@ nav{
     font-weight: bold;
     cursor: pointer;
 }
-
-.nft-extras{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin:1em 0.5em;
-}
-
 .nftTags-container{
     display: flex;
     flex-wrap: wrap;
@@ -99,8 +94,13 @@ nav{
     border: 1px solid #121212;
     box-shadow: 4px 4px 0px #121212;
     border-radius: 0.5em;
-    width: 265px;
+    height: 230px;
     padding: 0.5em;
+    margin:0.5em ;
+    margin-bottom: 1.5em;
+    overflow-x: auto;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
 }
 .tags{
     font-family: sans-serif;

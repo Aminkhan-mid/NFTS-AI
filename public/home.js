@@ -24,10 +24,12 @@ async function loadNFT() {
   <div class="nft-container">
     <img class="nft-img" src="${nft.imageURL}" alt="${data.name}">
     <div class="nft-name-type">
-      <p>${nft.name}</p>
-      <p>${nft.type}</p>
+      <span>
+        <p>${nft.name}</p>
+        <p>${nft.type}</p>
+      </span>
+      <i class="fa-solid fa-heart"></i>
     </div>
-    <div class="nft-extras">
       <div class="nftTags-container">
         ${nft.attributes.map((attr, i) => {
           return `
@@ -35,8 +37,6 @@ async function loadNFT() {
           `
         }).join("")}
         </div>
-        <i class="fa-solid fa-heart"></i>
-      </div>
       <div class="buttons-div">
         <button class="buy-nftBtn">Buy NFT</button>
         <button class="view-nftBtn">View NFT</button>
