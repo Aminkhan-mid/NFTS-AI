@@ -71,6 +71,9 @@ async function getNFTDescription(nft) {
     })
 
     const data = await res.json()
+    if(data){
+       svgSpinner.innerHTML = ""
+    }
     console.log("🧠 AI Response:", data)
     return data
 }
