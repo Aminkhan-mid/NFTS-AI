@@ -1,8 +1,9 @@
 # Node modules folder
 node_modules/
 
-# Environment variables
+# Environment
 .env
+.env.local
 
 # Optional: logs
 *.log
