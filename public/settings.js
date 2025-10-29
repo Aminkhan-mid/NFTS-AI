@@ -1,5 +1,5 @@
 import { userDetails } from "./login.js"
-const profileBody = document.getElementById("profile-body")
+const profileBody = document.getElementById("settings-body")
 const profilePfp = document.getElementById("profile-pfp")
 
 
