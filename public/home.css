@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #fbf8f2;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5em;
+}
+.stars{
+    width: 40px;
+}
+.nav-pfp{
+    width: 50px;
+    box-shadow: 0px 0px 2px black;
+    border-radius: 50%;
+    background: skyblue;
+} 
+.trending-p{
+    font-size: 1.5rem;
+    margin: 0.4em;
+}
+.nft-container{
+    box-shadow: 0px 0px 2px black;
+    padding: 0.5em;
+    margin: 1em 0.5em;
+}
+.nft-img{
+    border:1px solid black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 300px;
+    height: 250px;
+    display: block;
+    margin:  auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 0.2em;
+}
+.nft-name-type{
+    text-align: left;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.nft-name-type p{
+    width: fit-content;
+    color: black;
+    margin: 0.4em;
+    text-shadow: 2px 2px 0px #ffd93b;
+}
+.buttons-div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.buy-nftBtn{
+    background-color: #121212;
+    color: #fbf8f2;
+    width: 150px;
+    height: 40px;
+    border-radius: 2em;
+    font-size: 1.1rem;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+.view-nftBtn{
+    color: #121212;
+    background: transparent;
+    border: 1px solid black;
+    width: 150px;
+    height: 40px;
+    border-radius: 2em;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.nft-extras{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:1em 0.5em;
+}
+
+.nftTags-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.2em;
+    height: 100%;
+    border: 1px solid #121212;
+    box-shadow: 4px 4px 0px #121212;
+    border-radius: 0.5em;
+    width: 265px;
+    padding: 0.5em;
+}
+.tags{
+    font-family: sans-serif;
+    display: inline-block;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+    border: 1px solid black;
+}
+.one     { background: #fff5e6; color: #c47f00; }
+.two { background: #e6f3ff; color: #0066cc; }
+.three   { background: #ede9ff; color: #6a3fd1; }
+.four     { background: #ffeaea; color: #c81e1e; }
+.five     { background: #e7f9ed; color: #117d3f; }
+
+.fa-heart{
+    color: gray;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
