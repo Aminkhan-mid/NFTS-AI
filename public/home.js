@@ -68,6 +68,34 @@ async function loadNFT() {
       window.location.href = ("./buyNft.html")
     })
   })
+
+let likedList = JSON.parse(localStorage.getItem("likedNFTS")) || [];
+
+// 🖤 Set heart colors on load
+document.querySelectorAll(".fa-heart").forEach((btn, i) => {
+  const isLiked = likedList.some(n => n.name === data[i].name);
+  if (isLiked) {
+    btn.classList.add("liked");
+    btn.style.color = "red";
+  } else {
+    btn.style.color = "gray";
+  }
+
+  // ❤️ Handle click
+  btn.addEventListener("click", () => {
+    console.log(`❤️ NFT like toggled for: ${data[i].name}`);
+    const isNowLiked = btn.classList.toggle("liked");
+    btn.style.color = isNowLiked ? "red" : "gray";
+
+    if (isNowLiked) {
+      likedList.push(data[i]);
+    } else {
+      likedList = likedList.filter(n => n.name !== data[i].name);
+    }
+
+    localStorage.setItem("likedNFTS", JSON.stringify(likedList));
+  });
+});
 }
 async function getNFTDescription(nft) {
    svgSpinner.innerHTML = `<div class="svg-spinners--gooey-balls-2"></div>`
