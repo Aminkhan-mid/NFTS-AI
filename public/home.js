@@ -58,6 +58,16 @@ async function loadNFT() {
       window.location.href = "./viewNft.html"
     })
   })
+
+  document.querySelectorAll(".buy-nftBtn").forEach((btn, i) => {
+    btn.addEventListener("click", async () => {
+      console.log(`📦 Packaging nft using AI for: ${data[i].name}`)
+      const aiBuyData = await getNFTBuyingPage(data[i])
+      localStorage.setItem("selectedBuyNFT", JSON.stringify(data[i]))
+      localStorage.setItem("aiBuyData", JSON.stringify(aiBuyData))
+      window.location.href = ("./buyNft.html")
+    })
+  })
 }
 async function getNFTDescription(nft) {
    svgSpinner.innerHTML = `<div class="svg-spinners--gooey-balls-2"></div>`
@@ -69,7 +79,23 @@ async function getNFTDescription(nft) {
         description: nft.attributes?.map(a => `${a.trait_type}: ${a.value}`).join(", ")
       })
     })
-
+    const data = await res.json()
+    if(data){
+       svgSpinner.innerHTML = ""
+    }
+    console.log("🧠 AI Response:", data)
+    return data
+  }
+async function getNFTBuyingPage(nft) {
+   svgSpinner.innerHTML = `<div class="svg-spinners--gooey-balls-2"></div>`
+    const res = await fetch("/api/nft/buy", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: nft.name,
+        description: nft.attributes?.map(a => `${a.trait_type}: ${a.value}`).join(", ")
+      })
+    })
     const data = await res.json()
     if(data){
        svgSpinner.innerHTML = ""

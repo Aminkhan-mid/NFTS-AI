@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buy NFT</title>
+  <link rel="stylesheet" href="buyNft.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="/favicon_io/site.webmanifest">
+</head>
+<body>
+  <nav>
+    <i id="back-btn" class="fa-solid fa-angle-left"></i>
+    <p>Checkout</p>
+    <i class="fa-solid fa-ellipsis-vertical"></i>
+  </nav>
+
+  <main>
+    <section class="cart-item">
+      <img id="nft-img" class="nft-img" src="" alt="NFT Image" />
+      <div class="nft-info">
+        <p id="nft-name" class="nft-name"></p>
+        <p id="ai-shortDesc" class="ai-shortDesc">Dreams woven in pixels ✨</p>
+        <div class="price-row">
+          <p class="nft-value" id="nft-value">0.79 ETH</p>
+          <div class="qty-control">
+            <button id="minus-btn" class="qty-btn">−</button>
+            <p id="quantity">1</p>
+            <button id="plus-btn" class="qty-btn">+</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="summary">
+      <h3>Order Summary</h3>
+      <div class="summary-row">
+        <p>Item Price</p>
+        <p id="item-price">0.79 ETH</p>
+      </div>
+      <div class="summary-row">
+        <p>Platform Fee</p>
+        <p id="fee">0.02 ETH</p>
+      </div>
+      <div class="summary-row total">
+        <p>Total</p>
+        <p id="total">0.81 ETH</p>
+      </div>
+    </section>
+
+    <button id="buy-btn">Confirm Purchase</button>
+  </main>
+
+  <script defer src="./buyNft.js"></script>
+</body>
+</html>

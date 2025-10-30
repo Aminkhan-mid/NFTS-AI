@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fbf8f2;
+  font-family: "Poppins", sans-serif;
+  color: #141414;
+  padding-bottom: 3em;
+}
+
+/* 🧭 Top Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8em 1em;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+nav i {
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+/* 🖼️ NFT Card (Compact for Mobile) */
+.cart-item {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 1em;
+  margin: 1em;
+  padding: 1em;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+  gap: 0.8em;
+}
+
+.nft-img {
+  width: 100%;
+  border-radius: 0.8em;
+}
+
+.nft-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.3em;
+}
+
+.nft-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.ai-shortDesc {
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.4em;
+}
+
+.nft-value {
+  background-color: #ede9ff;
+  padding: 0.4em 0.9em;
+  border-radius: 0.5em;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* ➕ Quantity Controls */
+.qty-control {
+  display: flex;
+  align-items: center;
+  background-color: #141414;
+  color: #fbf8f2;
+  border-radius: 2em;
+  padding: 0.3em 0.7em;
+  gap: 0.6em;
+}
+
+.qty-control button {
+  background: none;
+  border: none;
+  color: #fbf8f2;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qty-control p {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* 💳 Summary Section */
+.summary {
+  background-color: #fff;
+  border-radius: 1em;
+  margin: 1em;
+  padding: 1.2em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.summary h3 {
+  text-align: center;
+  margin-bottom: 0.8em;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5em 0;
+  font-size: 0.9rem;
+}
+
+.summary-row.total {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* 🛒 Confirm Button */
+#buy-btn {
+  display: block;
+  margin: 1.5em auto;
+  width: 90%;
+  height: 45px;
+  border-radius: 5em;
+  border: none;
+  background-color: #141414;
+  color: #fbf8f2;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#buy-btn:active {
+  transform: scale(0.97);
+}
+
+

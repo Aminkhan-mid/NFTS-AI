@@ -91,7 +91,67 @@ server.post("/api/nft/describe", async (req, res) => {
     res.status(500).json({ error: "AI server error" })
   }
 })
-    
+
+server.post("/api/nft/buy", async (req, res) => {
+  const { name, description } = req.body;
+  if (!name && !description) {
+    return res.status(400).json({ error: "Missing NFT details for AI" });
+  }
+
+  const prompt = `
+  You are a stylish NFT curator creating content for a Buy NFT page.
+
+  NFT name: "${name}"
+  Description: "${description || "No details"}"
+
+  Rules:
+  1. Respond in pure JSON (no markdown/code).
+  2. "shortDesc": max 8 words, artistic, tagline-style.
+  3. "longDesc": max 35 words, elegant tone, like a collector’s caption. Don’t start with the name.
+  4. "shouldIBuy": only 2-3 words with a cool emoji.
+  5. Keep it engaging, luxury-vibe, and concise.
+
+  Format:
+  {
+  "shortDesc": "max 8 words, artistic and cool",
+  "longDesc": "max 35 words, poetic and elegant",
+  "shouldIBuy": "2-3 words + emoji"
+  }`;
+
+  try {
+    const ai = new GoogleGenerativeAI(process.env.AI_KEY);
+    const model = ai.getGenerativeModel({ model: "gemini-2.5-flash" });
+
+    // ✅ Simpler, compatible call
+    const result = await model.generateContent(prompt);
+
+
+    let rawText = result.response.text().trim()
+
+    rawText = rawText
+  .replace(/^```json\s*/i, "") // remove starting ```json
+  .replace(/^```/, "")         // or ``` at start
+  .replace(/```$/, "")         // or ``` at end
+  .replace(/Sure!|Here's|Output:|Response:/gi, "") // common AI chatter
+  .trim()
+
+console.log("🧠 Cleaned AI Text:", rawText)
+
+  let dataAI
+try {
+  dataAI = JSON.parse(rawText)
+} catch (err) {
+  console.error("❌ JSON parse failed, returning fallback:", err)
+  dataAI = { shortDesc: "Art speaks louder 🎨", longDesc: "This NFT defies words — a collector’s dream rendered in pixels.", shouldIBuy: "Maybe 💭" }
+}
+
+res.json(dataAI)
+  } catch (err) {
+    console.error("❌ Error in /api/nft/buy:", err);
+    res.status(500).json({ error: "AI server error" });
+  }
+});
+
     
 server.listen(PORT, ()=> {
     console.log(`✅🟣🟣 Server running at http://localhost:${PORT}`)
